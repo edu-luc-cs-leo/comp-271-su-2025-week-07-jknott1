@@ -38,7 +38,7 @@ public class HashTable<E extends Comparable<E>> {
      */
     public void add(E content) {
         // creates a new node to assign to the list
-        Node temp = new Node(content);
+        Node<E> temp = new Node<E>(content);
         // initialize a variable to assign to some part of the underlying array based on its hash code modulated with
         // the underlying array length
         int nodeIndex = (Math.abs(content.hashCode() % this.underlying.length));
