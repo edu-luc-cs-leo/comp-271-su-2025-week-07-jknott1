@@ -1,0 +1,9 @@
+# Reflection on week 06:
+
+I think that this week wasn't necessarily too bad! I think that I got most of the coding concepts here. However, this week is the first week where I will say that I ran into some conceptual errors rather than simple compiling errors.
+
+The main thing that I wanted to address was how I thought about stacks and queues. At the time, I imagined both of them having the same structure for their underlying arrays. That is, if a queue and a stack had they identical elements, their arrays would look identical rather than adding to the front versus the back for FIFO vs LIFO (as seen in the `push` method). Unfortunately led to some logical inconsistencies in my code - mainly in the pop() method. I ended up implementing it in such a way that Stack's version of it would turn it into a FIFO (popping the last element). In hindsight, after taking a second look, I should've been able to have seen and fixed that.
+
+Next, I will say that my time management kind of got to me that week again, as I thought I would have had a little more time to finish this assignment than I did (private circumstance). However, this week there was some improvement as I started earlier, I just took a little longer to complete this than usual as I also was a little confused conceptually.
+
+Last thing I will say is that I'm not exactly sure if my code passed the tests(?). The test class I was given didn't really use any of the methods I had written for Stack or Queue - I was a little confused about that. I will say though that this was also due to poor planning as I said above as I should have completed that draft sooner and asked about the test class, promptly.

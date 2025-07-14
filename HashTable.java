@@ -37,7 +37,50 @@ public class HashTable<E extends Comparable<E>> {
      * @param content E The content of a new node, to be placed in the array.
      */
     public void add(E content) {
-        // COMPLETE THIS METHOD
+        // creates a new node to assign to the list
+        Node temp = new Node(content);
+        // initialize a variable to assign to some part of the underlying array based on its hash code modulated with
+        // the underlying array length
+        int nodeIndex = (Math.abs(content.hashCode() % this.underlying.length));
+        // if the node's position in underlying array is not empty, the node gets pushed back
+        if (this.underlying[nodeIndex] != null) {
+            temp.setNext(this.underlying[nodeIndex]);
+        }
+        // null or not, the temp node becomes the new head.
+        this.underlying[nodeIndex] = temp;
     } // method add
+
+    public String toString() {
+        // initialze return string
+        String reString = "";
+        // initialize string that builds each linked list.
+        String currentLL = "";
+        // this loop builds the whole return string.
+        for (int i = 0; i < this.underlying.length; i++) {
+            // starts the linked list string with an open bracket.
+            currentLL += "[";
+            // traverses the linked list.
+            Node indexNode = this.underlying[i];
+            // integer variable that counts index of linked list
+            int j = 0;
+            // loop that builds the linked list string.
+            while (indexNode != null) {
+                // fencepost
+                if (j == 0) {
+                    currentLL += indexNode.getContent();
+                } else {
+                    currentLL += ", " + indexNode.getContent();
+                }
+                indexNode = indexNode.getNext();
+                j++;
+            }
+            // closes string with bracket
+            currentLL += "] \n";
+            // adds each linked list string to the return string
+            reString += currentLL;
+        }
+        // returns string.
+        return reString;
+    }
 
 } // class HashTable
